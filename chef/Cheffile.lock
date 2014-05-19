@@ -29,6 +29,13 @@ GIT
     ruby-install (0.1.2)
       git (>= 0.0.0)
 
+PATH
+  remote: my_cookbooks/sandbox
+  specs:
+    sandbox (0.0.1)
+      ruby-install (>= 0.0.0)
+
 DEPENDENCIES
   ruby-install (>= 0)
+  sandbox (>= 0)
 
