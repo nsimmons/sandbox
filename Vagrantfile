@@ -36,10 +36,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     v.vmx['displayName'] = "sandbox"
   end
 
-  # config.vm.provision :chef_solo do |chef|
-  #   chef.cookbooks_path = "chef/cookbooks"
-  #   chef.roles_path     = "chef/roles"
-  #   chef.data_bags_path = "chef/data_bags"
-  #   chef.add_role "sandbox"
-  # end
+  config.librarian_chef.cheffile_dir = "chef"
+
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "chef/cookbooks"
+    chef.roles_path     = "chef/roles"
+    chef.data_bags_path = "chef/data_bags"
+  end
 end

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'ruby-install', git: 'https://github.com/tombruijn/chef-ruby-install', ref: 'v0.1.2'

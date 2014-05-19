@@ -30,3 +30,7 @@ config/secrets.yml
 
 # Ignore transient vagrant files
 .vagrant
+
+#Ignore chef-librarian managed cookbooks
+/chef/cookbooks
+/chef/tmp
