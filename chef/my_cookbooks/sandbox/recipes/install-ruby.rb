@@ -5,7 +5,13 @@ directory node[:ruby_src_path] do
   action :delete
 end
 
-%w[ bundle  bundler  erb  gem  irb  rake  rdoc  ri  ruby  testrb ].each do |exec|
+package 'sqlite-devel' do
+end
+
+package 'gcc-c++' do
+end
+
+%w[ bundle  bundler  erb  gem  irb  rake  rdoc  ri  ruby  testrb rails ].each do |exec|
   target_path = File.join(node[:ruby_install_path], 'bin', exec)
   link_path = File.join('/usr/bin', exec)
 
