@@ -1,10 +1,15 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+require_relative 'lib/vagrant/plugins'
+
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "centos-6.5"
+
+  config.sandbox.private_key_path = "#{ENV['HOME']}/.ssh/id_rsa"
+  config.ssh.private_key_path = config.sandbox.private_key_path
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -46,4 +51,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.data_bags_path = "chef/data_bags"
     chef.add_role "sandbox"
   end
+
+  config.vm.provision :ssh
 end
