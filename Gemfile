@@ -5,11 +5,14 @@ gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
-gem 'sass-rails', '~> 4.0.3'
-gem 'therubyracer', '0.12.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
+group :assets do
+  gem 'sprockets-rails', :require => 'sprockets/railtie'
+  gem 'sass-rails', '~> 4.0.3'
+  gem 'therubyracer', '0.12.0'
+  gem 'uglifier', '>= 1.3.0'
+  gem 'coffee-rails', '~> 4.0.0'
+  gem 'jquery-rails'
+end
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
